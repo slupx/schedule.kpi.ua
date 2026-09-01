@@ -1,9 +1,21 @@
-# schedule.kpi.ua
+# schedule.kpi.ua (Meeting Links Fork)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/kpiua/schedule.kpi.ua)](https://hub.docker.com/r/kpiua/schedule.kpi.ua)
 
 A responsive, maintainable, scalable, and fast UI with a modern design for the students of Igor Sikorsky Kyiv Polytechnic Institute.
+
+> **About this fork** 
+> This is an experimental fork that adds a join button linking to online meetings (Zoom, Google Meet) directly on class cards in the schedule. View on: [https://schedule.slupx.dev](https://schedule.slupx.dev)
+>
+> **Changelog:**
+> * Added `MeetingJoinButton` component to **StudentScheduleContent** — opens a meeting link in a new tab when available.
+> * Added a full data layer for meeting links: `MeetingLink` model, `src/api/meetingLinks.ts` (CSV fetch), `useMeetingLinks` query hook, and `useMeetingLink` selector hook.
+> * Meeting links data is fetched from an [open Google Sheets table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRuHHs45Qd1mdT3F_hpQWiU-Dwzh5reLI_u3vMtjXRtE2axj_GCv6TQcfYDRtDSDP248WgWwjETYu9g/pub?gid=0&single=true&output=csv) (CSV format, columns: Group, Subject, Type, Lecturer, Link, Note).
+> * Shows a pulsing skeleton placeholder while links are loading to prevent layout shift (CLS).
+> * Added `papaparse` dependency for CSV parsing.
+>
+> *For communication and links table editor access text @makarii_sl.*
 
 ## API usage
 

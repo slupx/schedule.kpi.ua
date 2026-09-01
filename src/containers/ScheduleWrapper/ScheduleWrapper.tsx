@@ -9,7 +9,7 @@ import { cn } from '../../common/utils/cn';
 export const ScheduleGrid = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) => (
   <div
     className={cn(
-      'relative flex grow flex-col gap-4 overflow-hidden rounded-[20px] border-2 border-neutral-100 bg-bg-table',
+      'bg-bg-table relative flex flex-col gap-4 border-2 border-neutral-100 rounded-[20px] overflow-hidden grow',
       className,
     )}
     {...props}

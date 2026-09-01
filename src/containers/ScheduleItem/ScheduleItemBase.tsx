@@ -16,20 +16,20 @@ const ScheduleItemBase = <T extends Pair>({ scheduleMatrixCell, collapsed, child
   } = scheduleMatrixCell;
 
   return (
-    <>
-      <div className="flex items-center justify-between gap-[25px]">
+    <div className='flex flex-col gap-3 h-full'>
+      <div className="flex justify-between items-center gap-[25px]">
         <SubjectTypeBadge type={tag} dates={dates}>
           {SUBJECT_TYPES[tag]}
         </SubjectTypeBadge>
         {scheduleMatrixCell.currentPair && (
-          <span className="relative text-xs font-bold text-current-pair uppercase before:absolute before:top-1/2 before:-left-[13px] before:block before:h-2 before:w-2 before:-translate-y-1/2 before:rounded-full before:bg-current-pair before:content-['']">
+          <span className="before:block before:top-1/2 before:-left-[13px] before:absolute relative before:bg-current-pair before:rounded-full before:w-2 before:h-2 font-bold text-current-pair text-xs uppercase before:content-[''] before:-translate-y-1/2">
             Зараз
           </span>
         )}
       </div>
-      <div className="mt-3 text-sm leading-[17px] font-bold text-primary-font">{name}</div>
-      {!collapsed && <div className="mt-3 flex flex-col gap-3">{children}</div>}
-    </>
+      <div className="font-bold text-primary-font text-sm leading-[17px]">{name}</div>
+      {!collapsed && <div className="flex flex-col flex-1 gap-3">{children}</div>}
+    </div>
   );
 };
 
