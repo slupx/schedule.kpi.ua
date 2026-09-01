@@ -1,0 +1,7 @@
+services:
+  schedule-kpi:
+    image: ghcr.io/slupx/schedule.kpi.ua:latest
+    container_name: schedule-kpi
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:80"
